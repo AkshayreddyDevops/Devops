@@ -1,6 +1,6 @@
 - name: demo
-  host: all
-  task:
+  hosts: all
+  tasks:
     - ping
 
 - name: print
