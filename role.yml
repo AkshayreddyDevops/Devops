@@ -1,4 +1,4 @@
 - name: Demon roles
   hosts: all
   roles:
-    - sample
+    - frontend
