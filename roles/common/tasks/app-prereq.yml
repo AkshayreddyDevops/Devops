@@ -17,8 +17,9 @@
 #     url: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v3.zip
 #     dest: /tmp/{{ component }}.zip
 
-- name: Extract zip file
+- name: download & Extract zip file
   ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v3.zip
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}-v3.zip
     dest: "{{ app_path }}"
+    remote_src: yes
 
