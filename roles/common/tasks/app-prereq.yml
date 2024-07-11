@@ -1,0 +1,24 @@
+- name: Add Application User
+  ansible.builtin.user:
+    name: roboshop
+
+- name: Remove dir
+  ansible.builtin.file:
+    path: "{{ app_path }}"
+    state: absent
+
+- name: Create dir
+  ansible.builtin.file:
+    path: "{{ app_path }}"
+    state: directory
+
+# - name: Download FE Application content
+#   ansible.builtin.get_url:
+#     url: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v3.zip
+#     dest: /tmp/{{ component }}.zip
+
+- name: Extract zip file
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v3.zip
+    dest: "{{ app_path }}"
+

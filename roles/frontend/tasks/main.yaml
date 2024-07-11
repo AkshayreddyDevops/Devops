@@ -18,3 +18,8 @@
   ansible.builtin.systemd_service:
     state: restarted
     name: nginx
+
+- name: Run other tasks from common ex app-prereq.yml
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: app-prereq
