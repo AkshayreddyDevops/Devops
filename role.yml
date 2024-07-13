@@ -1,5 +1,0 @@
-- name: Demon roles
-  hosts: all
-  become: true
-  roles:
-    - '{{role}}'
