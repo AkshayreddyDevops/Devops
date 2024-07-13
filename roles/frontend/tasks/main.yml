@@ -16,7 +16,7 @@
 
 - name: service config 
   ansible.builtin.systemd_service:
-    state: restated
+    state: restarted
     name: nginx
     enabled: true
 
