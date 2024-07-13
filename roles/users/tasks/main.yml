@@ -1,0 +1,9 @@
+- name: create /app dir
+  ansible.builtin.file:
+    path: "{{app_path}}"
+    state: directory
+
+- name: user setup
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: nodejs
