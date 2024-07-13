@@ -1,0 +1,12 @@
+- name: setup mongo repo
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+- name: install mongod service 
+  ansible.builtin.dnf:
+    name: mongodb-mongosh
+    state: latest
+
+- name: mongo Data createion
+  ansible.builtin.shell: mongosh --host 172.31.22.54 </app/db/master-data.js

@@ -1,0 +1,40 @@
+- name: disable nodejs
+  ansible.builtin.shell: dnf module disable nodejs -y
+
+- name: disable nodejs
+  ansible.builtin.shell: dnf module enable nodejs:20 -y
+
+- name: install nodejs
+  ansible.builtin.dnf: 
+    name: nodejs
+    state: latest
+
+- name: add roboshop user 
+  ansible.builtin.include_role:
+    name: common
+    tasks_for: add_users
+
+- name: Download zip file
+  ansible.builtin.include_role:
+    name: common
+    tasks_for: DownloadCurl
+
+- name: unzip file
+  ansible.builtin.include_role:
+    name: common
+    tasks_for: unzipFiles
+    
+- name: npm install
+  ansible.builtin.shell: npm install -y
+  args:
+    chdir: "{{app_path}}"
+
+- name: mongo schema creation
+  ansible.builtin.include_role:
+    name: common
+    tasks_for: schema
+
+- name: service config and start
+  ansible.builtin.include_role:
+    name: common
+    tasks_for: systemd
