@@ -19,7 +19,7 @@
   block:
     - name: install mysql service 
       ansible.builtin.dnf:
-        name: mmysql
+        name: mysql
         state: latest
     
     - name: mysql Data createion
