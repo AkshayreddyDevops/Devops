@@ -1,0 +1,33 @@
+- name: install mavan/java
+  ansible.builtin.dnf:
+    name: mavan
+
+################################# Add from common #####################################
+- name: get add_user.yml from common task
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: add_users
+
+- name: get AddremoveFiles.yml from common task
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: AddRemoveFiles
+
+
+- name: get DownloadCurl.yml from common task
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: DownloadCurl
+
+
+- name: get UnzipFiles.yml from common task
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: unzipFiles
+
+################################# END Add from common #####################################
+
+- name: download dependencies
+  ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
+  args:
+    chdir: "{{app_path}}"

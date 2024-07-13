@@ -1,12 +1,29 @@
-- name: setup mongo repo
-  ansible.builtin.copy:
-    src: mongo.repo
-    dest: /etc/yum.repos.d/mongo.repo
+- name: Load Mongo schema
+  when: schema_setup == "mongo"
+  block:
+    - name: setup mongo repo
+      ansible.builtin.copy:
+        src: mongo.repo
+        dest: /etc/yum.repos.d/mongo.repo
 
-- name: install mongod service 
-  ansible.builtin.dnf:
-    name: mongodb-mongosh
-    state: latest
+    - name: install mongod service 
+      ansible.builtin.dnf:
+        name: mongodb-mongosh
+        state: latest
 
-- name: mongo Data createion
-  ansible.builtin.shell: mongosh --host 172.31.82.151 </app/db/master-data.js
+    - name: mongo Data createion
+      ansible.builtin.shell: mongosh --host 172.31.82.151 </app/db/master-data.js
+
+- name: Load mysql schema
+  when: schema_setup == "mysql"
+  block:
+    - name: install mysql service 
+      ansible.builtin.dnf:
+        name: mmysql
+        state: latest
+    
+    - name: mysql Data createion
+      ansible.builtin.shell: mysql -h 172.31.92.157 -uroot -pRoboShop@1 < /app/db/{{item}}.sql
+      loop: "{{schema_files}}"
+
+
