@@ -24,24 +24,24 @@
 - name: get add_user.yml from common task
   ansible.builtin.include_role:
     name: roles
-    task_from: add_user
+    tasks_from: add_user
 
 - name: get AddremoveFiles.yml from common task
   ansible.builtin.include_role:
     name: roles
-    task_from: AddRemoveFiles
+    tasks_from: AddRemoveFiles
 
 
 - name: get DownloadCurl.yml from common task
   ansible.builtin.include_role:
     name: roles
-    task_from: DownloadCurl
+    tasks_from: DownloadCurl
 
 
 - name: get UnzipFiles.yml from common task
   ansible.builtin.include_role:
     name: roles
-    task_from: UnzipFiles
+    tasks_from: UnzipFiles
 
 ################################# END Add from common #####################################
 
