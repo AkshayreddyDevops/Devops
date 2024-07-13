@@ -1,6 +1,6 @@
 - name: install mavan/java
   ansible.builtin.dnf:
-    name: mavan
+    name: maven
     state: latest
 
 ################################# Add from common #####################################
