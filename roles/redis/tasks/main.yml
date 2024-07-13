@@ -19,7 +19,7 @@
   ansible.builtin.lineinfile:
     path: /etc/redis/redis.conf
     regexp: 'protected-mode'
-    line: 'protected-mode on'
+    line: 'protected-mode no'
 
 - name: enable and start redis service
   ansible.builtin.systemd_service:
