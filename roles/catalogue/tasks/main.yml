@@ -1,9 +1,9 @@
 - name: create /app dir
   ansible.builtin.file:
     path: /app
-    state: directory 
-    
+    state: directory
+
 - name: cataloug setup
   ansible.builtin.include_role:
     name: common
-    tasks_for: nodejs
+    tasks_from: nodejs

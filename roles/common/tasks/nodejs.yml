@@ -12,17 +12,17 @@
 - name: add roboshop user 
   ansible.builtin.include_role:
     name: common
-    tasks_for: add_users
+    tasks_from: add_users
 
 - name: Download zip file
   ansible.builtin.include_role:
     name: common
-    tasks_for: DownloadCurl
+    tasks_from: DownloadCurl
 
 - name: unzip file
   ansible.builtin.include_role:
     name: common
-    tasks_for: unzipFiles
+    tasks_from: unzipFiles
     
 - name: npm install
   ansible.builtin.shell: npm install -y
@@ -32,9 +32,9 @@
 - name: mongo schema creation
   ansible.builtin.include_role:
     name: common
-    tasks_for: schema
+    tasks_from: schema
 
 - name: service config and start
   ansible.builtin.include_role:
     name: common
-    tasks_for: systemd
+    tasks_from: systemd
