@@ -1,0 +1,4 @@
+- name: unzip files 
+  ansible.builtin.unarchive:
+    src: /tmp/{{component}}.yml
+    dest: "{{app_path}}"

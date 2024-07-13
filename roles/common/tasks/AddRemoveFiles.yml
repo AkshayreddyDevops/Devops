@@ -1,0 +1,9 @@
+- name: Remove directory /usr/share/nginx/html var name app_path
+  ansible.builtin.file:
+    path: "{{app_path}}"
+    state: absent
+
+- name: add directory /usr/share/nginx/html var name app_path
+  ansible.builtin.file:
+    path: "{{app_path}}"
+    state: directory
