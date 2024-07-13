@@ -10,7 +10,7 @@
 - name: replace 127.0.0.1 in {{component}} conf file
   ansible.builtin.replace:
     path: /etc/{{component}}d.conf
-    regexp: 127.0.0.0
+    regexp: 127.0.0.1
     replace: 0.0.0.0
 
 - name: service restart
