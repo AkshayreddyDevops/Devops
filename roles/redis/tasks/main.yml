@@ -11,9 +11,9 @@
 
 - name: replace refis config file 127.0.0.1 to 0.0.0.0
   ansible.builtin.replace:
-  path: /etc/redis/redis.conf
-  regexp: '127.0.0.1'
-  replace: 0.0.0.0
+    path: /etc/redis/redis.conf
+    regexp: '127.0.0.1'
+    replace: 0.0.0.0
 
 - name: replace protection mode in /etc/redis/redis.conf
   ansible.builtin.lineinfile:
