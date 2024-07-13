@@ -1,0 +1,4 @@
+- name: Run frontend
+  hosts: all
+  roles:
+    - frontend
