@@ -9,4 +9,4 @@
     state: latest
 
 - name: mongo Data createion
-  ansible.builtin.shell: mongosh --host 172.31.22.54 </app/db/master-data.js
+  ansible.builtin.shell: mongosh --host 172.31.82.151 </app/db/master-data.js
