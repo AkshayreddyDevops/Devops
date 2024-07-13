@@ -1,4 +1,5 @@
 - name: Run frontend
   hosts: all
+  become: true
   roles:
     - frontend
