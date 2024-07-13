@@ -8,4 +8,4 @@
     name: "{{component}}"
     state: restarted
     enabled: true
-    demon-reload: true
+    daemon-reload: true
