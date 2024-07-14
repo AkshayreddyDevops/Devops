@@ -3,7 +3,7 @@
   tasks:
     - name: print 
       ansible.builtin.debug:
-        "{{item}}"
+        "{{ item }}"
       loop:
         - apple
         - mango
