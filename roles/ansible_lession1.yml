@@ -1,10 +1,12 @@
 - hosts: localhost
   vars:
     url: Akshay Reddy
+  vars_files:
+    - sample_-vars1.yml
   tasks:
     - name: Print Name
       ansible.builtin.debug:
         msg: "{{url}}"
     - name: Print age 
       ansible.builtin.debug:
-        msg: 38
+        msg: "{{age}}"
