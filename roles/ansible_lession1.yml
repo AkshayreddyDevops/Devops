@@ -1,10 +1,10 @@
-hosts: localhost
-vars:
-  url: Akshay Reddy
-tasks:
-  - name: Print Name
-    ansible.builtin.debug:
-      msg: "{{url}}"
-  - name: Print age 
-    ansible.builtin.debug:
-      msg: 38
+- hosts: localhost
+  vars:
+    url: Akshay Reddy
+  tasks:
+    - name: Print Name
+      ansible.builtin.debug:
+        msg: "{{url}}"
+    - name: Print age 
+      ansible.builtin.debug:
+        msg: 38
