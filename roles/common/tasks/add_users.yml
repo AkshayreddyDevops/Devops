@@ -5,8 +5,8 @@
 
 - name: rabbitMQ
   community.rabbitmq.rabbitmq_user:
-    user: 
-    password:
+    user: roboshop
+    password: roboshop123
     state: present
     vhost: /
     configure_priv: .*
