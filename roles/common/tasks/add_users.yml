@@ -1,3 +1,15 @@
 - name: add roboshop user
   ansible.builtin.user:
     name: roboshop
+  when: component != rabbitmq
+
+- name: rabbitMQ
+  community.rabbitmq.rabbitmq_user:
+    user: 
+    password:
+    state: present
+    vhost: /
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+  when: component == rabbitmq
