@@ -5,7 +5,7 @@
 
 - name: rabbitMQ
   community.rabbitmq.rabbitmq_user:
-    user: roboshop
+    user: roboshop1
     password: roboshop123
     state: present
     vhost: /
