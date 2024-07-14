@@ -1,12 +1,10 @@
-- hosts: localhost
-  vars:
-    url: Akshay Reddy
-  vars_files:
-    - sample-vars1.yml
+- name: loops demo 
+  hosts: localhost
   tasks:
-    - name: Print Name
+    - name: print 
       ansible.builtin.debug:
-        msg: "{{url}}"
-    - name: Print age 
-      ansible.builtin.debug:
-        msg: "{{age}}"
+        "{{item}}"
+      loop:
+        - apple
+        - mango
+        - bannana
