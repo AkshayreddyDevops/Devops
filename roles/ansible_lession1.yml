@@ -2,7 +2,7 @@
   vars:
     url: Akshay Reddy
   vars_files:
-    - sample_-vars1.yml
+    - sample-vars1.yml
   tasks:
     - name: Print Name
       ansible.builtin.debug:
