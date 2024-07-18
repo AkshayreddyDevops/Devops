@@ -24,6 +24,6 @@ data "aws_route53_zone" "zoneid" {
   name         = "edutech.online"
 }
 
-output "sg" {
+output "zoneid" {
   value = data.aws_route53_zone.zoneid
 }
