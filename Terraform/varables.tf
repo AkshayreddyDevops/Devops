@@ -1,7 +1,13 @@
-variable "instance_type" {
-  default = "t3.micro"
-}
-
 variable "components" {
-  default = ["frontend","mongo","catalogue"]
+  default = {
+    frontend = {
+      instance_type = "t3.micro"
+    }
+    catalogue = {
+      instance_type = "t3.micro"
+    }
+    mongo = {
+      instance_type = "t3.micro"
+    }
+  }
 }
