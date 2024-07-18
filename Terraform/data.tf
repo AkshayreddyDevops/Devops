@@ -11,8 +11,8 @@ output "ami"{
 
 data "aws_security_groups" "sg" {
   filter {
-    name   = "allow-all"
-    values = ["*nodes*"]
+    name   = "group-name"
+    values = ["allow-all"]
   }
 }
 
