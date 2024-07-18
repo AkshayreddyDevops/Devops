@@ -1,6 +1,6 @@
 data "aws_ami" "example" {
   most_recent      = true
-  name_regex       = "ami-041e2ea9402c46c32"
+  name_regex       = "RHEL-9-DevOps-Practice"
   owners           = ["973714476881"]
 }
 
