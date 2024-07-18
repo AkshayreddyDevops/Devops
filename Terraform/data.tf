@@ -19,3 +19,11 @@ data "aws_security_groups" "sg" {
 output "sg" {
   value = data.aws_security_groups.sg
 }
+
+data "aws_route53_zone" "zoneid" {
+  name         = "edutech.online"
+}
+
+output "sg" {
+  value = data.aws_route53_zone.zoneid
+}
