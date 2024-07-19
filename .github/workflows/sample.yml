@@ -1,11 +1,19 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  dev:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@4
       - run: echo Hello
 
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello
+
+  uat:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello
 
     
