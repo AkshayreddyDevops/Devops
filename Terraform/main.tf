@@ -12,7 +12,7 @@
 resource "aws_instance" "display"{
   ami = "RHEL-9-DevOps-Practice"
   instance_type = "t3.micro"
-  vpc_security_group_ids  = "allow-all"
+  vpc_security_group_ids  = "data.aws_security_groups.sg.ids"
   tags = {
     name = "frontend"
   }
