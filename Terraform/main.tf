@@ -9,7 +9,7 @@
 # }
 
 
-resource "aws_instance_tst" "display"{
+resource "aws_instance" "display"{
   ami = "RHEL-9-DevOps-Practice"
   instance_type = "t3.micro"
   vpc_security_group_ids  = "allow-all"
@@ -19,5 +19,5 @@ resource "aws_instance_tst" "display"{
 }
 
 output "name" {
-  value = aws_instance_tst.display
+  value = aws_instance.display
 }
