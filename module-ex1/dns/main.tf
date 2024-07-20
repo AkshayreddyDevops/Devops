@@ -3,7 +3,7 @@ resource "aws_route53_record" "frontend"{
   name = "frontend.dev.eudtech.online"
   type = "A"
   ttl = 300
-  records = [var.private_ip]
+  records = [var.private-ip]
 }
 
-variable "private_ip" {}
+variable "private-ip" {}
